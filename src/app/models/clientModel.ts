@@ -2,7 +2,6 @@
 export interface IClient {
     id:number,
     name?: string;
-    phone?: string
   }
 
   export interface IAddress {
@@ -13,14 +12,14 @@ export interface IClient {
 export const tableColumns: string[] = [
     'id', 
     'name', 
-    'phone', 
+    'action'
 ];
 
 
-export const dataSourceRaw: IClient[]=[
-    {
-      id:1, name:'wilson', phone:'example'
-    },
+// export const dataSourceRaw: IClient[]=[
+//     {
+//       id:1, name:'wilson',
+//     },
    
-  ];
+//   ];
   

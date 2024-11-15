@@ -9,10 +9,15 @@ export class ClientService {
   constructor() { }
   clientKey:string = 'clientData';
 
-  addClient(){
-   let data = JSON.stringify( [{
-      id:1, name:'wilson', phone:'example'
-    },...this.getClientList()]);
+  genId():number{
+    let date =new Date();
+    return (date.getMilliseconds()+date.getSeconds());
+  }
+  addClient(client:string){
+    let newId = this.genId();
+   let data = JSON.stringify( [...this.getClientList(),{
+      id:newId, name:client, action:newId
+    }]);
 
     localStorage.setItem(this.clientKey,data)
   }
