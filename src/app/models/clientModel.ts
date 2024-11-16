@@ -12,7 +12,8 @@ export interface IClient {
 export const tableColumns: string[] = [
     'id', 
     'name', 
-    'action'
+    'action',
+    'action2'
 ];
 
 

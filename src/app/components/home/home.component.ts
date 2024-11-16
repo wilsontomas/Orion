@@ -8,6 +8,7 @@ import { ClientService } from '../../services/client.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ClientDialogComponent } from '../shared/client-dialog/client-dialog.component';
 import { AddressDialogComponent } from '../shared/address-dialog/address-dialog.component';
+import { AddressListDialogComponent } from '../shared/address-list-dialog/address-list-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -77,5 +78,15 @@ export class HomeComponent implements OnInit, AfterViewInit{
       //console.log('The dialog was closed');
     
     });
+  }
+
+  
+  openAddressListDialog(id:number): void {debugger;
+    const dialogRef = this.dialog.open(AddressListDialogComponent, {
+      width: '500x',
+      data: id
+    });
+
+    dialogRef.afterClosed().subscribe(result => { });
   }
 }
