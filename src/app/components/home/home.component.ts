@@ -75,13 +75,15 @@ export class HomeComponent implements OnInit, AfterViewInit{
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed');
+     
+      if(result)
+      this.clientService.addClientAddress(id,result)
     
     });
   }
 
   
-  openAddressListDialog(id:number): void {debugger;
+  openAddressListDialog(id:number): void {
     const dialogRef = this.dialog.open(AddressListDialogComponent, {
       width: '500x',
       data: id

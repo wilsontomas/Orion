@@ -7,6 +7,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 export const commonModules=[
     CommonModule,
@@ -23,7 +24,8 @@ export const sharedModules=[
     MatPaginatorModule,
     MatDialogModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
     
 ]
 

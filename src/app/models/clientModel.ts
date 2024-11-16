@@ -4,10 +4,12 @@ export interface IClient {
     name?: string;
   }
 
-  export interface IAddress {
+
+
+  export interface IAddress{
     id:number,
-    content?: string;
-    postalCode?: string
+    info?: string;
+    clientId: number
   }
 export const tableColumns: string[] = [
     'id', 

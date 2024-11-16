@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { sharedModules } from '../sharedModule';
 import { ClientService } from '../../../services/client.service';
+import { IAddress } from '../../../models/clientModel';
 
 @Component({
   selector: 'app-address-list-dialog',
@@ -12,6 +13,7 @@ import { ClientService } from '../../../services/client.service';
 })
 export class AddressListDialogComponent implements OnInit {
   
+  clientData:IAddress[]=[]
 constructor(
   private dialogRef: MatDialogRef<AddressListDialogComponent>,
   @Inject(MAT_DIALOG_DATA) public data: number,
@@ -19,7 +21,7 @@ constructor(
   
 ){}
   ngOnInit() {
-    
+    this.clientData = this.clientService.getAddressListById(this.data);
   }
   
   onNoClick(): void {
